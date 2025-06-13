@@ -89,3 +89,16 @@ variable "webhook_service_uri" {
   default     = []
   description = "The service URI of the webhook."
 }
+
+variable "user_assigned_managed_identity_name" {
+  type        = string
+  default     = "id-amba-alz-arg-reader-prod-001"
+
+}
+
+variable "root_management_group_name" {
+  type        = string
+  default     = "amba-poc"
+  description = "Root management group name"
+
+}

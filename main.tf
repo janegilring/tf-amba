@@ -19,6 +19,18 @@ provider "azurerm" {
   features {}
 }
 
+module "amba_alz" {
+  source  = "Azure/avm-ptn-monitoring-amba-alz/azurerm"
+  version = "0.1.1"
+  providers = {
+    azurerm = azurerm.management
+  }
+  location                            = var.location
+  root_management_group_name          = var.root_management_group_name
+  resource_group_name                 = var.resource_group_name
+  user_assigned_managed_identity_name = var.user_assigned_managed_identity_name
+}
+
 module "amba_policy" {
   source  = "Azure/avm-ptn-alz/azurerm"
   version = "0.12.0"
